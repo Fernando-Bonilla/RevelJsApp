@@ -25,4 +25,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "editor",
+    pattern: "{controller=MarkdownEditor}/{action=Index}");
+
 app.Run();

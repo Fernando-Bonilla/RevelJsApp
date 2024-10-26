@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Markdown Editor";
+}
+
+<!-- Incluir los estilos de EasyMDE y personalizados -->
+<link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+<link rel="stylesheet" href="/css/MarkdownEditor.css">
+
+<h2>Markdown Editor</h2>
+
+<!-- Agregar el textarea para EasyMDE -->
+<textarea id="myTextarea"></textarea>
+
+<button id="button-download">Descargar</button>
+
+<!-- Incluir los scripts de EasyMDE y personalizados -->
+<script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+<script src="/js/MarkdownEditorScripts.js"></script>
+
+
+<script>
+    // Inicializar EasyMDE en el textarea
+    var easyMDE = new EasyMDE({ element: document.getElementById('myTextarea') });
+</script>
