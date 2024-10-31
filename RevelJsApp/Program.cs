@@ -28,6 +28,10 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
+    name: "reveal",
+    pattern: "{controller=Reveal}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
     name: "editor",
     pattern: "{controller=MarkdownEditor}/{action=Index}");
 
