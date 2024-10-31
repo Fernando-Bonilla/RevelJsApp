@@ -3,713 +3,705 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
 
-  <title>reveal.js</title>
+    <title>reveal.js</title>
 
-  <link rel="stylesheet" href="/dist/reset.css" />
-  <link rel="stylesheet" href="/dist/reveal.css" />
-  <link rel="stylesheet" href="/dist/theme/dracula.css" />
+    <link rel="stylesheet" href="/dist/reset.css" />
+    <link rel="stylesheet" href="/dist/reveal.css" />
+    <link rel="stylesheet" href="/dist/theme/dracula.css" />
 
-  <!-- Theme used for syntax highlighted code -->
-  <link rel="stylesheet" href="/plugin/highlight/monokai.css" />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/plugin/highlight/monokai.css" />
 </head>
 
 <body>
-  <div class="reveal">
-    <div class="layout-wrapper">
-      <!-- Left Border (Hidden in print-pdf mode) -->
-      <div class="border-left border-left-html">
-        <div class="border-left-content-wrapper">
-          <div class="border-left-content border">
-            <p>Primer Semestre</p>
-          </div>
-          <div class="border-left-content">
-            <p>2024</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Main Content Wrapper -->
-      <div class="content-wrapper">
-        <!-- Top Border (Hidden in print-pdf mode) -->
-        <div class="border-top border-top-html">
-          <div class="border-top-content-wrapper">
-            <div>
-              <p>Analista Programador</p>
+    <div class="reveal">
+        <div class="layout-wrapper">
+            <!-- Left Border (Hidden in print-pdf mode) -->
+            <div class="border-left border-left-html">
+                <div class="border-left-content-wrapper">
+                    <div class="border-left-content border">
+                        <p>Primer Semestre</p>
+                    </div>
+                    <div class="border-left-content">
+                        <p>2024</p>
+                    </div>
+                </div>
             </div>
-            <div>
-              <p>Programación I - Introducción</p>
-            </div>
-          </div>
-        </div>
 
-        <!-- Slides Container -->
-        <div class="slides">
-          <section data-markdown="miArchivoTest.md" data-separator="---" data-separator-vertical="----"
-            data-separator-notes="^Note:">
-          </section>
+            <!-- Main Content Wrapper -->
+            <div class="content-wrapper">
+                <!-- Top Border (Hidden in print-pdf mode) -->
+                <div class="border-top border-top-html">
+                    <div class="border-top-content-wrapper">
+                        <div>
+                            <p>Analista Programador</p>
+                        </div>
+                        <div>
+                            <p>Programación I - Introducción</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slides Container -->
+                <div class="slides">
+                    <section data-markdown="miArchivoTest.md" data-separator="---" data-separator-vertical="----"
+                             data-separator-notes="^Note:">
+                    </section>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <script src="/dist/reveal.js"></script>
-  <script src="/plugin/notes/notes.js"></script>
-  <script src="/plugin/markdown/markdown.js"></script>
-  <script src="/plugin/highlight/highlight.js"></script>
-  <style>
-    .reveal .slides {
-      text-align: left !important;
-      /*top: 60px;*/
-      position: relative !important;
-
-    }
-
-    .reveal pre {
-      margin: 0 !important;
-    }
-  </style>
-  <script>
-    // More info about initialization & config:
-    // - https://revealjs.com/initialization/
-    // - https://revealjs.com/config/
-
-    function SplitTitlesAndContent() {
-      return {
-        id: 'splitTitlesAndContent',
-        init: (deck) => {
-          deck.addEventListener('slidechanged', function (event) {
-            if (event.currentSlide.dataset.splitMade) {
-              return;
-            }
-
-            const titleDiv = document.createElement('div');
-            titleDiv.classList.add('titles-container')
-            const titles = event.currentSlide.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            titles.forEach((title) => {
-              titleDiv.appendChild(title);
-            });
-
-            const contentDiv = document.createElement('div');
-            contentDiv.classList.add('contents-container')
-            const contents = event.currentSlide.querySelectorAll('p, ul, ol, pre, img, blockquote, table, iframe, figure, div, span');
-            contents.forEach((content) => {
-              contentDiv.appendChild(content);
-            });
-
-            event.currentSlide.innerHTML = '';
-            event.currentSlide.appendChild(titleDiv);
-            event.currentSlide.appendChild(contentDiv);
-            event.currentSlide.dataset.splitMade = 'true';
-          })
-        },
-      }
-    }
-
-    
-    Reveal.initialize({
-      hash: true,     
-
-      //width: 1920,
-      //height: 1220,
-
-      //width: '100%',
-      //height: '100%',
-
-      //width: 297,
-      //height: 210,
-
-      //width: '100%',
-      //height: '90%',
-      //margin: 0,
-
-      autoScale: true,
-
-      // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]// , SplitTitlesAndContent
-    });
-
-    
-
-    window.addEventListener('resize', function () {
-      Reveal.layout();
-    });   
-
-  </script>
-
-  <style>
-    /*=========Estilos template=========*/
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh !important;
-      width: 100vw !important;
-      position: relative !important;
-    }
-
-    body::before {
-      content: "" !important;
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      height: 100% !important;
-      width: 100% !important;
-      margin: 0;
-      padding: 0;
-      background-image: url('/imgs/laptop-mesa-madera_53876-70997.jpg') !important;
-      background-size: cover !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-      filter: brightness(30%) !important;
-      z-index: -1 !important;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: white !important;
-      font-family: 'Poppins', sans-serif !important;
-      font-weight: 600 !important;
-    }
-
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin-top: 30px !important;
-    }
-
-    p {
-      font-family: 'Poppins', sans-serif !important;
-      font-weight: 400 !important;
-    }
-
-    img::before {
-      margin: 0 !important;
-      height: 100% !important;
-    }
-
-    img {
-      margin: 0 !important;
-      height: 100% !important;
-    }
-
-    .reveal section {
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-
-    .reveal .slides {
-      inset: unset !important;
-      width: 100% !important;
-      height: 90% !important;
-      left: 0 !important;
-      top: 0 !important;
-      transform: none !important; /* Ensures no unwanted transformations */
-      position: relative !important; /* Remove inset positioning */
-      
-    }
-
-   
-
-    /*=========Estilos template=========*/
-
-    /*=================== Estilos para que el contenido generado en la slide quede dentro de ambos bordes ==============*/
-
-    .slide-content-wrapper {
-      display: flex;
-      /*flex-direction: column;*/
-      flex-direction: row;
-      height: 100%;
-    }
-
-    .slide-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: transparent;
-      height: 60px;
-      color: white;
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      border-bottom: 1px solid #6f6f6f;
-      width: 100%;
-    }
-
-    .slide-body {
-      display: flex;
-      flex-grow: 1;
-      flex-direction: column;
-    }
-
-    .border-left {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: transparent;
-      width: 60px;
-      color: white;
-      border-left: 1px solid #6f6f6f;
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      z-index: 2;
-    }
-
-    .markdown-content {
-      flex-grow: 1;
-      padding: 20px;
-    }
-
-    .slides {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    /*================= End Estilos para que el contenido generado en la slide quede dentro de ambos bordes ============*/
-
-
-    /*comienzo de metida de mano para pasar los contenedores de los bordes a relativo (no absolute)*/
-    .reveal {
-      display: flex;
-      height: 100%;
-      width: 100%;
-    }
-
-    /* Contenedor principal usando Flexbox */
-    .layout-wrapper {
-      display: flex;
-      height: 100%;
-      width: 100%;
-    }
-
-    /* Borde izquierdo ocupa espacio */
-    .border-left {
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-      background-color: transparent !important;
-      width: 60px;
-      color: white;
-      border-left: 1px solid #6f6f6f;
-      font-family: Arial, sans-serif;
-      font-size: 18px !important;
-      writing-mode: vertical-rl;
-      /* Rota el texto verticalmente */
-      transform: rotate(180deg);
-    }
-
-    .border-left-content-wrapper {
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: space-around !important;
-      align-items: center !important;
-      height: 100% !important;
-      width: 100% !important;
-    }
-
-    .border-left-content {
-      flex-grow: 1 !important;
-      display: flex !important;
-      align-content: center !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 100% !important;
-      height: 50% !important;
-    }
-
-    .border-left-content.border {
-      border-bottom: 1px solid #6f6f6f !important;
-    }
-
-    /* Contenedor principal */
-    .content-wrapper {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      position: relative;
-    }
-
-    /* Borde superior ocupa espacio */
-    .border-top {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: transparent;
-      height: 60px;
-      color: white;
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      border-bottom: 1px solid #6f6f6f;
-      width: 100%;
-    }
-
-    .border-top-content-wrapper {
-      display: flex;
-      flex-direction: row;
-      width: 80%;
-      justify-content: space-between;
-    }
-
-    /*=========End Estilos template=========*/
-
-    /*=======Estilos para embed code=======*/
-
-    .present {
-      /*top: 10% !important;*/
-      height: 100% !important;
-
-    }
-
-    .code-wrapper {
-      width: 98% !important;
-      height: 99% !important;
-    }
-
-    .hljs {
-      font-size: 60px;
-      line-height: 120%;
-    }
-
-    /*======= End Estilos para embed code=======*/
-
-    /*======== Estilos para media print========*/
-
-    /* Esconde bordes normales en modo print */
-
-    .print-pdf .border-top-html, 
-    .print-pdf .border-left-html {
-      display: none !important;
-    }
-
-    /* Esconde bordes de impresión en modo normal */
-    body:not(.print-pdf) .border-left-print,
-    body:not(.print-pdf) .border-top-print {
-      display: none !important;
-    }
-
-    /* Mostrar bordes de impresión solo en modo print */
-    .print-pdf .border-top-print, 
-    .print-pdf .border-left-print {
-      display: flex !important;
-    }
-
-    .slide-content-wrapper {
-      display: flex;
-      flex-direction: row; /* Arrange the left border and body side by side */
-      height: 100%;
-    }
-
-    .slide-body {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .border-left-print {
-      height: 100%;
-      position: relative;
-    }
-
-    .pdf-page {
-      height: 100vh !important; /* Full height of the viewport */
-      min-height: 100vh !important;
-      /*width: 100vw; */
-      /*overflow-y: auto !important; /* Ensure content doesn't overflow */ 
-    }
-
-    .pdf-page {
-      background: transparent !important;
-    }
-
-
-  </style>
-  <script>
-
-    function addBordersForPrint() {
-      console.log('Adding print borders');
-
-      const slides = document.querySelectorAll('.slides section');
-
-      slides.forEach(slide => {
-        // Create wrapper elements for the slide
-        const wrapper = document.createElement('div');
-        wrapper.classList.add('slide-content-wrapper');
-
-        const borderLeft = document.createElement('div');
-        borderLeft.classList.add('border-left', 'border-left-print');
-        borderLeft.innerHTML = `
-          <div class="border-left-content-wrapper">
-            <div class="border-left-content border">
-              <p>Primer Semestre</p>
-            </div>
-            <div class="border-left-content">
-              <p>2024</p>
-            </div>
-          </div>`;
-
-        const borderTop = document.createElement('div');
-        borderTop.classList.add('border-top', 'border-top-print');
-        borderTop.innerHTML = `
-          <div class="border-top-content-wrapper">
-            <div>
-              <p>Analista Programador</p>
-            </div>
-            <div>
-              <p>Programación I - Introducción</p>
-            </div>
-          </div>`;
-
-        const body = document.createElement('div');
-        body.classList.add('slide-body');
-
-        // Wrap all existing slide content
-        const markdownContent = document.createElement('div');
-        markdownContent.classList.add('markdown-content');
-        while (slide.firstChild) {
-          markdownContent.appendChild(slide.firstChild);
+    <script src="/dist/reveal.js"></script>
+    <script src="/plugin/notes/notes.js"></script>
+    <script src="/plugin/markdown/markdown.js"></script>
+    <script src="/plugin/highlight/highlight.js"></script>
+    <style>
+        .reveal .slides {
+            text-align: left !important;
+            /*top: 60px;*/
+            position: relative !important;
         }
 
-        // Arrange elements into wrapper
-        body.appendChild(borderTop);
-        body.appendChild(markdownContent);
-        wrapper.appendChild(borderLeft);
-        wrapper.appendChild(body);
-        slide.appendChild(wrapper);
-      });
-    }
+        .reveal pre {
+            margin: 0 !important;
+        }
+    </style>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
 
+        function SplitTitlesAndContent() {
+            return {
+                id: 'splitTitlesAndContent',
+                init: (deck) => {
+                    deck.addEventListener('slidechanged', function (event) {
+                        if (event.currentSlide.dataset.splitMade) {
+                            return;
+                        }
 
+                        const titleDiv = document.createElement('div');
+                        titleDiv.classList.add('titles-container')
+                        const titles = event.currentSlide.querySelectorAll('h1, h2, h3, h4, h5, h6');
+                        titles.forEach((title) => {
+                            titleDiv.appendChild(title);
+                        });
 
-    window.onload = function () {
+                        const contentDiv = document.createElement('div');
+                        contentDiv.classList.add('contents-container')
+                        const contents = event.currentSlide.querySelectorAll('p, ul, ol, pre, img, blockquote, table, iframe, figure, div, span');
+                        contents.forEach((content) => {
+                            contentDiv.appendChild(content);
+                        });
 
-      // Se captura el contenedor donde se insertan las slides
-      let slidesContainer = document.querySelector('.slides');
-      // Se capturan todas las imgs dentro del contenedor con la clase .slides (para scopear las imágenes a solo estas)
-      let imgCollection = slidesContainer.querySelectorAll('img');
-
-      // Verifica si hay al menos una imagen
-      if (imgCollection.length > 0) {
-
-        for (let i = 0; i < imgCollection.length; i++) {
-
-          let img = imgCollection[i];
-
-          // Solo procede si la imagen aún no ha sido redimensionada
-          if (!img.dataset.resized) {
-            let parentImg = img.parentElement;
-
-            // Estilos del contenedor padre de la imagen
-            parentImg.style.height = "100%";
-            parentImg.style.marginTop = "0px";
-            parentImg.style.marginBottom = "0px";
-            parentImg.style.marginRight = "80px";
-            parentImg.style.display = "flex";
-            parentImg.style.justifyContent = "center";
-            parentImg.style.alignItems = "center";
-            console.log("Estilos padre imagenes");
-
-            // Ajustes de la imagen
-            img.style.maxWidth = "100%";
-            img.style.maxHeight = "100%";
-            img.style.objectFit = "contain";
-
-            // Limitar tanto el ancho como la altura máxima
-            let maxWidth = 1300;  // Ancho máximo permitido
-            let maxHeight = 900;  // Altura máxima permitida
-
-            let originalWidth = img.naturalWidth;
-            let originalHeight = img.naturalHeight;
-
-            // Si la imagen es más ancha o más alta que los límites, recalcular el tamaño
-            if (originalWidth > maxWidth || originalHeight > maxHeight) {
-              let aspectRatio = originalHeight / originalWidth;
-
-              // Ajusta el ancho y la altura manteniendo la proporción
-              if (originalWidth > originalHeight) {
-                // Si es más ancha que alta
-                let newWidth = Math.min(originalWidth, maxWidth);
-                let newHeight = Math.round(newWidth * aspectRatio);
-
-                // Asegura de que la altura no exceda el máximo permitido
-                if (newHeight > maxHeight) {
-                  newHeight = maxHeight;
-                  newWidth = Math.round(newHeight / aspectRatio);
-                }
-
-                // Aplicar las nuevas dimensiones
-                img.width = newWidth;
-                img.height = newHeight;
-
-                //console.log(`Imagen ${i + 1}: Redimensionada a ${newWidth}px x ${newHeight}px`);
-              } else {
-                // Si es más alta que ancha
-                let newHeight = Math.min(originalHeight, maxHeight);
-                let newWidth = Math.round(newHeight / aspectRatio);
-
-                // Asegura de que el ancho no exceda el máximo permitido
-                if (newWidth > maxWidth) {
-                  newWidth = maxWidth;
-                  newHeight = Math.round(newWidth * aspectRatio);
-                }
-
-                // Aplicar las nuevas dimensiones
-                img.width = newWidth;
-                img.height = newHeight;
-
-                //console.log(`Imagen ${i + 1}: Redimensionada a ${newWidth}px x ${newHeight}px`);
-              }
+                        event.currentSlide.innerHTML = '';
+                        event.currentSlide.appendChild(titleDiv);
+                        event.currentSlide.appendChild(contentDiv);
+                        event.currentSlide.dataset.splitMade = 'true';
+                    })
+                },
             }
-
-            // Marcar la imagen como redimensionada
-            img.dataset.resized = true;
-          }
         }
 
-        // Recalcula el layout de Reveal.js después de ajustar las imágenes
-        Reveal.layout();
-      } else {
-        console.log("No hay imágenes en el DOM");
-      }
 
-      // Comienzo código que toma en cuenta el ancho del border-left al hacer resize
-      console.log("Ajustando slides con border-left");
+        Reveal.initialize({
+            hash: true,
 
-      // Selecciona el borde izquierdo y las slides
-      /* let borderLeft = document.querySelector('.border-left');
-      let slides = document.querySelector('.slides');
+            //width: 1920,
+            //height: 1220,
 
-      if (borderLeft && slides) {
-        let borderLeftWidth = borderLeft.offsetWidth; // Obtener el ancho del borde izquierdo
+            //width: '100%',
+            //height: '100%',
 
-        // Ajusta el valor de 'left' en 'slides' teniendo en cuenta el borde izquierdo
-        slides.style.left = `calc(50% + ${borderLeftWidth / 2}px)`;
+            //width: 297,
+            //height: 210,
 
-        //  contenedor se mantiene centrado
-        //slides.style.transform = 'translate(-50%, -50%) scale(0.723148)';
+            //width: '100%',
+            //height: '90%',
+            //margin: 0,
 
-        // Recalcular al redimensionar la ventana
-        window.onresize = function () {
-          let newBorderLeftWidth = borderLeft.offsetWidth;
-          slides.style.left = `calc(50% + ${newBorderLeftWidth / 2}px)`;
-          Reveal.layout();  // Recalcula el layout de Reveal.js
-        };
-      } */
+            autoScale: true,
 
-      // Codigo que verifica si la url tiene el parametro print-pdf, si lo tiene muestra los div generados dinamicamente y esconde los div que estan en el html
-      const isPrintPDF = window.location.search.includes('print-pdf');
-      document.body.classList.toggle('print-pdf', isPrintPDF);
-
-      if (isPrintPDF) {       
-
-
-        
-        // Ocultar borders normales
-        document.querySelectorAll('.border-top:not(.border-top-print)').forEach(border => border.style.display = 'none');
-        document.querySelectorAll('.border-left:not(.border-left-print)').forEach(border => border.style.display = 'none');
-
-        
-        
-        // Agrega la imagen de fondo y el filtro a cada slide
-        document.querySelectorAll('.reveal .slides section').forEach(section => {
-          const backgroundDiv = document.createElement('div');
-          backgroundDiv.style.position = 'absolute';
-          backgroundDiv.style.top = 0;
-          backgroundDiv.style.left = 0;
-          backgroundDiv.style.width = '100%';
-          //backgroundDiv.style.width = '297mm';
-          backgroundDiv.style.height = '100%';
-          //backgroundDiv.style.height = '210mm';
-          backgroundDiv.style.backgroundImage = 'url("/imgs/laptop-mesa-madera_53876-70997.jpg")';
-          backgroundDiv.style.backgroundSize = 'cover';
-          backgroundDiv.style.backgroundPosition = 'center';
-          backgroundDiv.style.backgroundRepeat = 'no-repeat';
-          backgroundDiv.style.filter = 'brightness(30%)';
-          backgroundDiv.style.zIndex = '-1'; // Ensure it's behind the content
-
-          section.style.position = 'relative'; // Set section to relative positioning
-          section.prepend(backgroundDiv); // Add the background div as the first child of the section
-
-          let slidesContainer = document.querySelector('.slides');
-          // Se capturan todas las imgs dentro del contenedor con la clase .slides (para scopear las imágenes a solo estas)
-          let imgCollection = slidesContainer.querySelectorAll('img');
-
-          for (let i = 0; i < imgCollection.length; i++) {
-
-            let img = imgCollection[i];
-            let parentImg = img.parentElement;
-
-            // Estilos del contenedor padre de la imagen
-
-            parentImg.style.marginRight = "0px";
-
-                    
-          };       
-
-          
-        });       
-
-         // Remueve propiedad position: Absolute, ya que el script reaveal.js calcula automaticamente el top             
-         document.querySelectorAll('.reveal .slides section').forEach(section => {
-          section.setAttribute('style', 'position: static !important');
-        });   
-
-        // Agregar borders de print
-        addBordersForPrint();         
-        
-
-      } else {
-        // Ocultar borders de print en vista normal
-        document.querySelectorAll('.border-top-print, .border-left-print').forEach(border => {
-          border.style.display = 'none';
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]// , SplitTitlesAndContent
         });
-      }
-
-    };
-
-   
-  </script>
-  <style>
-     @media print {
-      body {
-        width: 297mm !important;
-        height: 210mm !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-      }
-
-      .reveal .slides {
-        width: 297mm !important;
-        height: 210mm !important;
-      }
-
-      .pdf-page {
-        width: 297mm !important;
-        height: 210mm !important;
-        page-break-after: always !important;
-      } 
-
-      .reveal section {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-    }   
 
 
-  </style>
+
+        window.addEventListener('resize', function () {
+            Reveal.layout();
+        });
+
+    </script>
+
+    <style>
+        /*=========Estilos template=========*/
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh !important;
+            width: 100vw !important;
+            position: relative !important;
+        }
+
+            body::before {
+                content: "" !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                height: 100% !important;
+                width: 100% !important;
+                margin: 0;
+                padding: 0;
+                background-image: url('/imgs/laptop-mesa-madera_53876-70997.jpg') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                filter: brightness(30%) !important;
+                z-index: -1 !important;
+            }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: white !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 600 !important;
+        }
+
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 30px !important;
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 400 !important;
+        }
+
+        img::before {
+            margin: 0 !important;
+            height: 100% !important;
+        }
+
+        img {
+            margin: 0 !important;
+            height: 100% !important;
+        }
+
+        .reveal section {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .reveal .slides {
+            inset: unset !important;
+            width: 100% !important;
+            height: 90% !important;
+            left: 0 !important;
+            top: 0 !important;
+            transform: none !important; /* Ensures no unwanted transformations */
+            position: relative !important; /* Remove inset positioning */
+        }
+
+
+
+        /*=========Estilos template=========*/
+
+        /*=================== Estilos para que el contenido generado en la slide quede dentro de ambos bordes ==============*/
+
+        .slide-content-wrapper {
+            display: flex;
+            /*flex-direction: column;*/
+            flex-direction: row;
+            height: 100%;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            height: 60px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            border-bottom: 1px solid #6f6f6f;
+            width: 100%;
+        }
+
+        .slide-body {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+        }
+
+        .border-left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            width: 60px;
+            color: white;
+            border-left: 1px solid #6f6f6f;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            z-index: 2;
+        }
+
+        .markdown-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .slides {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /*================= End Estilos para que el contenido generado en la slide quede dentro de ambos bordes ============*/
+
+
+        /*comienzo de metida de mano para pasar los contenedores de los bordes a relativo (no absolute)*/
+        .reveal {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Contenedor principal usando Flexbox */
+        .layout-wrapper {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Borde izquierdo ocupa espacio */
+        .border-left {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            background-color: transparent !important;
+            width: 60px;
+            color: white;
+            border-left: 1px solid #6f6f6f;
+            font-family: Arial, sans-serif;
+            font-size: 18px !important;
+            writing-mode: vertical-rl;
+            /* Rota el texto verticalmente */
+            transform: rotate(180deg);
+        }
+
+        .border-left-content-wrapper {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-around !important;
+            align-items: center !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        .border-left-content {
+            flex-grow: 1 !important;
+            display: flex !important;
+            align-content: center !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            height: 50% !important;
+        }
+
+            .border-left-content.border {
+                border-bottom: 1px solid #6f6f6f !important;
+            }
+
+        /* Contenedor principal */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        /* Borde superior ocupa espacio */
+        .border-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            height: 60px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            border-bottom: 1px solid #6f6f6f;
+            width: 100%;
+        }
+
+        .border-top-content-wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            justify-content: space-between;
+        }
+
+        /*=========End Estilos template=========*/
+
+        /*=======Estilos para embed code=======*/
+
+        .present {
+            /*top: 10% !important;*/
+            height: 100% !important;
+        }
+
+        .code-wrapper {
+            width: 98% !important;
+            height: 99% !important;
+        }
+
+        .hljs {
+            font-size: 60px;
+            line-height: 120%;
+        }
+
+        /*======= End Estilos para embed code=======*/
+
+        /*======== Estilos para media print========*/
+
+        /* Esconde bordes normales en modo print */
+
+        .print-pdf .border-top-html,
+        .print-pdf .border-left-html {
+            display: none !important;
+        }
+
+        /* Esconde bordes de impresión en modo normal */
+        body:not(.print-pdf) .border-left-print,
+        body:not(.print-pdf) .border-top-print {
+            display: none !important;
+        }
+
+        /* Mostrar bordes de impresión solo en modo print */
+        .print-pdf .border-top-print,
+        .print-pdf .border-left-print {
+            display: flex !important;
+        }
+
+        .slide-content-wrapper {
+            display: flex;
+            flex-direction: row; /* Arrange the left border and body side by side */
+            height: 100%;
+        }
+
+        .slide-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border-left-print {
+            height: 100%;
+            position: relative;
+        }
+
+        .pdf-page {
+            height: 100vh !important; /* Full height of the viewport */
+            min-height: 100vh !important;
+            /*width: 100vw; */
+            /*overflow-y: auto !important; /* Ensure content doesn't overflow */
+        }
+
+        .pdf-page {
+            background: transparent !important;
+        }
+    </style>
+    <script>
+
+        function addBordersForPrint() {
+            console.log('Adding print borders');
+
+            const slides = document.querySelectorAll('.slides section');
+
+            slides.forEach(slide => {
+                // Create wrapper elements for the slide
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('slide-content-wrapper');
+
+                const borderLeft = document.createElement('div');
+                borderLeft.classList.add('border-left', 'border-left-print');
+                borderLeft.innerHTML = `
+              <div class="border-left-content-wrapper">
+                <div class="border-left-content border">
+                  <p>Primer Semestre</p>
+                </div>
+                <div class="border-left-content">
+                  <p>2024</p>
+                </div>
+              </div>`;
+
+                const borderTop = document.createElement('div');
+                borderTop.classList.add('border-top', 'border-top-print');
+                borderTop.innerHTML = `
+              <div class="border-top-content-wrapper">
+                <div>
+                  <p>Analista Programador</p>
+                </div>
+                <div>
+                  <p>Programación I - Introducción</p>
+                </div>
+              </div>`;
+
+                const body = document.createElement('div');
+                body.classList.add('slide-body');
+
+                // Wrap all existing slide content
+                const markdownContent = document.createElement('div');
+                markdownContent.classList.add('markdown-content');
+                while (slide.firstChild) {
+                    markdownContent.appendChild(slide.firstChild);
+                }
+
+                // Arrange elements into wrapper
+                body.appendChild(borderTop);
+                body.appendChild(markdownContent);
+                wrapper.appendChild(borderLeft);
+                wrapper.appendChild(body);
+                slide.appendChild(wrapper);
+            });
+        }
+
+
+
+        window.onload = function () {
+
+            // Se captura el contenedor donde se insertan las slides
+            let slidesContainer = document.querySelector('.slides');
+            // Se capturan todas las imgs dentro del contenedor con la clase .slides (para scopear las imágenes a solo estas)
+            let imgCollection = slidesContainer.querySelectorAll('img');
+
+            // Verifica si hay al menos una imagen
+            if (imgCollection.length > 0) {
+
+                for (let i = 0; i < imgCollection.length; i++) {
+
+                    let img = imgCollection[i];
+
+                    // Solo procede si la imagen aún no ha sido redimensionada
+                    if (!img.dataset.resized) {
+                        let parentImg = img.parentElement;
+
+                        // Estilos del contenedor padre de la imagen
+                        parentImg.style.height = "100%";
+                        parentImg.style.marginTop = "0px";
+                        parentImg.style.marginBottom = "0px";
+                        parentImg.style.marginRight = "80px";
+                        parentImg.style.display = "flex";
+                        parentImg.style.justifyContent = "center";
+                        parentImg.style.alignItems = "center";
+                        console.log("Estilos padre imagenes");
+
+                        // Ajustes de la imagen
+                        img.style.maxWidth = "100%";
+                        img.style.maxHeight = "100%";
+                        img.style.objectFit = "contain";
+
+                        // Limitar tanto el ancho como la altura máxima
+                        let maxWidth = 1300;  // Ancho máximo permitido
+                        let maxHeight = 900;  // Altura máxima permitida
+
+                        let originalWidth = img.naturalWidth;
+                        let originalHeight = img.naturalHeight;
+
+                        // Si la imagen es más ancha o más alta que los límites, recalcular el tamaño
+                        if (originalWidth > maxWidth || originalHeight > maxHeight) {
+                            let aspectRatio = originalHeight / originalWidth;
+
+                            // Ajusta el ancho y la altura manteniendo la proporción
+                            if (originalWidth > originalHeight) {
+                                // Si es más ancha que alta
+                                let newWidth = Math.min(originalWidth, maxWidth);
+                                let newHeight = Math.round(newWidth * aspectRatio);
+
+                                // Asegura de que la altura no exceda el máximo permitido
+                                if (newHeight > maxHeight) {
+                                    newHeight = maxHeight;
+                                    newWidth = Math.round(newHeight / aspectRatio);
+                                }
+
+                                // Aplicar las nuevas dimensiones
+                                img.width = newWidth;
+                                img.height = newHeight;
+
+                                //console.log(`Imagen ${i + 1}: Redimensionada a ${newWidth}px x ${newHeight}px`);
+                            } else {
+                                // Si es más alta que ancha
+                                let newHeight = Math.min(originalHeight, maxHeight);
+                                let newWidth = Math.round(newHeight / aspectRatio);
+
+                                // Asegura de que el ancho no exceda el máximo permitido
+                                if (newWidth > maxWidth) {
+                                    newWidth = maxWidth;
+                                    newHeight = Math.round(newWidth * aspectRatio);
+                                }
+
+                                // Aplicar las nuevas dimensiones
+                                img.width = newWidth;
+                                img.height = newHeight;
+
+                                //console.log(`Imagen ${i + 1}: Redimensionada a ${newWidth}px x ${newHeight}px`);
+                            }
+                        }
+
+                        // Marcar la imagen como redimensionada
+                        img.dataset.resized = true;
+                    }
+                }
+
+                // Recalcula el layout de Reveal.js después de ajustar las imágenes
+                Reveal.layout();
+            } else {
+                console.log("No hay imágenes en el DOM");
+            }
+
+            // Comienzo código que toma en cuenta el ancho del border-left al hacer resize
+            console.log("Ajustando slides con border-left");
+
+            // Selecciona el borde izquierdo y las slides
+            /* let borderLeft = document.querySelector('.border-left');
+            let slides = document.querySelector('.slides');
+
+            if (borderLeft && slides) {
+              let borderLeftWidth = borderLeft.offsetWidth; // Obtener el ancho del borde izquierdo
+
+              // Ajusta el valor de 'left' en 'slides' teniendo en cuenta el borde izquierdo
+              slides.style.left = `calc(50% + ${borderLeftWidth / 2}px)`;
+
+              //  contenedor se mantiene centrado
+              //slides.style.transform = 'translate(-50%, -50%) scale(0.723148)';
+
+              // Recalcular al redimensionar la ventana
+              window.onresize = function () {
+                let newBorderLeftWidth = borderLeft.offsetWidth;
+                slides.style.left = `calc(50% + ${newBorderLeftWidth / 2}px)`;
+                Reveal.layout();  // Recalcula el layout de Reveal.js
+              };
+            } */
+
+            // Codigo que verifica si la url tiene el parametro print-pdf, si lo tiene muestra los div generados dinamicamente y esconde los div que estan en el html
+            const isPrintPDF = window.location.search.includes('print-pdf');
+            document.body.classList.toggle('print-pdf', isPrintPDF);
+
+            if (isPrintPDF) {
+
+
+
+                // Ocultar borders normales
+                document.querySelectorAll('.border-top:not(.border-top-print)').forEach(border => border.style.display = 'none');
+                document.querySelectorAll('.border-left:not(.border-left-print)').forEach(border => border.style.display = 'none');
+
+
+
+                // Agrega la imagen de fondo y el filtro a cada slide
+                document.querySelectorAll('.reveal .slides section').forEach(section => {
+                    const backgroundDiv = document.createElement('div');
+                    backgroundDiv.style.position = 'absolute';
+                    backgroundDiv.style.top = 0;
+                    backgroundDiv.style.left = 0;
+                    backgroundDiv.style.width = '100%';
+                    //backgroundDiv.style.width = '297mm';
+                    backgroundDiv.style.height = '100%';
+                    //backgroundDiv.style.height = '210mm';
+                    backgroundDiv.style.backgroundImage = 'url("/imgs/laptop-mesa-madera_53876-70997.jpg")';
+                    backgroundDiv.style.backgroundSize = 'cover';
+                    backgroundDiv.style.backgroundPosition = 'center';
+                    backgroundDiv.style.backgroundRepeat = 'no-repeat';
+                    backgroundDiv.style.filter = 'brightness(30%)';
+                    backgroundDiv.style.zIndex = '-1'; // Ensure it's behind the content
+
+                    section.style.position = 'relative'; // Set section to relative positioning
+                    section.prepend(backgroundDiv); // Add the background div as the first child of the section
+
+                    let slidesContainer = document.querySelector('.slides');
+                    // Se capturan todas las imgs dentro del contenedor con la clase .slides (para scopear las imágenes a solo estas)
+                    let imgCollection = slidesContainer.querySelectorAll('img');
+
+                    for (let i = 0; i < imgCollection.length; i++) {
+
+                        let img = imgCollection[i];
+                        let parentImg = img.parentElement;
+
+                        // Estilos del contenedor padre de la imagen
+
+                        parentImg.style.marginRight = "0px";
+
+
+                    };
+
+
+                });
+
+                // Remueve propiedad position: Absolute, ya que el script reaveal.js calcula automaticamente el top
+                document.querySelectorAll('.reveal .slides section').forEach(section => {
+                    section.setAttribute('style', 'position: static !important');
+                });
+
+                // Agregar borders de print
+                addBordersForPrint();
+
+
+            } else {
+                // Ocultar borders de print en vista normal
+                document.querySelectorAll('.border-top-print, .border-left-print').forEach(border => {
+                    border.style.display = 'none';
+                });
+            }
+
+        };
+
+
+    </script>
+    <style>
+        @media print {
+            body {
+                width: 297mm !important;
+                height: 210mm !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+            }
+
+            .reveal .slides {
+                width: 297mm !important;
+                height: 210mm !important;
+            }
+
+            .pdf-page {
+                width: 297mm !important;
+                height: 210mm !important;
+                page-break-after: always !important;
+            }
+
+            .reveal section {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+    </style>
 </body>
 
 </html>

@@ -14,7 +14,9 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseDefaultFiles();  // Carga index.html por defecto
+
 app.UseStaticFiles();
 
 app.UseRouting();

@@ -1,4 +1,4 @@
-# Slide 1
+# Slide 1 Testeando el proyect
 
 Un parrafo cualquiera
 
@@ -10,17 +10,15 @@ Un parrafo cualquiera
 
 ---
 
-## Slide 2
+## Slide 2 Testeando el slide proyect
 
 Texto parte **bold**
+
+---
 
 ![test image](https://fastly.picsum.photos/id/977/200/300.jpg?hmac=YYtcm39X8v9y0KYAb_9s-ufIz_R0Kgbt_EP0F8-jkFU)
 
 ---
-
-### Slide 3
-
-#### Codigo
 
 ```csharp
  public int testeo() {
